@@ -14,5 +14,6 @@
         "strings": "inline",
         "other": "inline"
     },
-    "editor.quickSuggestionsDelay": 1000
+    "editor.quickSuggestionsDelay": 1000,
+    "python.terminal.executeInFileDir": true
 }
