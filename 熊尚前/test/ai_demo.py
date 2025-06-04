@@ -20,13 +20,21 @@ def loss(y, y_h):
     return np.sum((y - y_h)**2)
     
 # 计算梯度
+# 计算损失函数关于参数 W 的梯度
 def gradient(x, y, y_h):
+    # 初始化一个长度为 5 的零向量，用于存储每个参数对应的梯度
     grad = np.zeros(5)
+    # 计算损失函数关于 W[0] 的梯度，对应 x 的 4 次方项
     grad[0] = np.sum(-2 * x**4 * (y - y_h))
+    # 计算损失函数关于 W[1] 的梯度，对应 x 的 3 次方项
     grad[1] = np.sum(-2 * x**3 * (y - y_h))
+    # 计算损失函数关于 W[2] 的梯度，对应 x 的 2 次方项
     grad[2] = np.sum(-2 * x**2 * (y - y_h))  
+    # 计算损失函数关于 W[3] 的梯度，对应 x 的 1 次方项
     grad[3] = np.sum(-2 * x * (y - y_h))
+    # 计算损失函数关于 W[4] 的梯度，对应常数项
     grad[4] = np.sum(-2 * (y - y_h))
+    # 返回计算得到的梯度向量
     return grad
 
 # 循环迭代
